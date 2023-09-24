@@ -1,0 +1,38 @@
+version: '3'
+
+services:
+  #define o primeiro serviço nomeado de bd
+  db:
+    image: postgres:latest
+    container_name: db
+    #externaliza a porta 5432 pra 5433 isso foi feito pra diferenciar o postgres da maquina host com a do container
+    ports:
+      - 5433:5432
+    #variaveis de ambiente as quais definem usuario e senha e criam a base de dados
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: aluno
+      POSTGRES_DB: maisagua
+    restart: always
+  
+  #define o segundo serviço nomeado de backend
+  backend:
+    #a instruçao abaixo diz pra que o serviço do backend so se inicie quando o serviço do bd inicie
+    #para assim evitar erros de falha de conexao caso o bd nn tenha sido iniciado ainda
+    depends_on:
+      - db
+    image: maisagua:01
+    container_name: backend
+    ports:
+      - 5000:8080
+    restart: always
+    
+  frontend:
+    depends_on:
+      - backend
+    image: frontmaisagua:01
+    container_name: frontend
+    ports:
+      - 5500:80
+    restart: always
+    

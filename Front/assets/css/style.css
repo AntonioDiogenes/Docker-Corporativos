@@ -1,0 +1,136 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+  
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+.logo {
+    width: 100px;
+    height: 40px;
+}
+
+.centralizaTitulo{
+    text-align: center;
+    margin: 2% 2%;
+}
+
+
+.g_pic {
+    border-radius: 50%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    height: 20px;
+    margin-left: -4px;
+    margin-right: 8px;
+    min-width: 20px;
+    width: 20px;
+    display:flex;
+}
+
+.g_name{
+    color: #5f6368;
+    fill: #5f6368;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.g_email{
+    color: #5f6368;
+    fill: #5f6368;
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.g_login {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: background-color .218s,border-color .218s;
+    transition: background-color .218s,border-color .218s;
+    -webkit-user-select: none;
+    -webkit-appearance: none;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #dadce0;
+    color: #3c4043;
+    cursor: pointer;
+    font-family: "Google Sans",arial,sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.25px;
+    outline: none;
+    overflow: hidden;
+    padding: 0 12px;
+    position: relative;
+    text-align: center;
+    vertical-align: text-top;
+    white-space: nowrap;
+    width:280px;
+}
+
+.centraliza{
+    text-align: center;
+    align-items: center;
+}
+
+.img-postagem{
+    height: 20em;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.configuraBotao{
+    color: white;
+    text-decoration: none;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+  
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+  
+footer p {
+    margin: 0;
+}
+
+
+.containerr {
+    display: flex;
+    margin-top: 5px;
+}
+  
+.div1, .div2 {
+    width: 49%;
+    margin-left: 0.5%;
+    height: 88vh; /* Altura reduzida apenas para fins de exemplo */
+    overflow-y: auto;
+
+}
+
+  
+/* Esconde a barra de rolagem */
+  .div1::-webkit-scrollbar,
+  .div2::-webkit-scrollbar {
+    width: 1; /* Torna a largura da barra de rolagem zero */
+}

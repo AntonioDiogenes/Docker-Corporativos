@@ -1,0 +1,38 @@
+esse executavel da aplicaçao ja esta teoricamente configurado pra se conectar mas nn funciona entao façam as mudanças necessarias
+clonem o projeto na maquina de voces e configurem o properties
+
+lembre-se de deixar o dockerfile e o executavel em uma pasta separada pra evitar erros
+entao em uma pasta isolada voce tera a aplicaçao faça o build dela e entao voce pega o executavel e bota na pasta do dockerfile 
+
+abaixo as configuraçoes do arquivo "aplication.porperties" que eu estava usando
+
+caso voce se pergunte por que a url de conexao esta assim "jdbc:postgresql://db:5433/maisagua" vou dar uma breve explicaçao 
+
+o db e o nome do serviço criado no docker compose ao rodar os container eles estao todos dentro de uma rede docker criada ao executar o compose
+entao o metodo de descoberta sera diferente utilizando o nome do serviço pra enchergar o banco 
+a porta 5433 tbm usei pra ser diferente em minha maquina local o postgres roda na 5432 entao o postgres do contaienr roda na 5433
+no arquivo do compose defino pra externalizar a porta 5432 do container na 5433 
+
+spring.jpa.database=POSTGRESQL
+spring.datasource.plataform=postgres
+spring.database.driverClassName=org.postgresql.Driver
+spring.jpa.hibernate.ddl-auto=update
+spring.datasource.url=jdbc:postgresql://db:5433/maisagua
+spring.datasource.username=postgres
+spring.datasource.password=aluno
+spring.jpa.properties.hibernate.jdbc.lab.non-contextual_creation=true
+# The format used for the keystore. It could be set to JKS in case it is a JKS file
+server.ssl.key-store-type=PKCS12
+# The path to the keystore containing the certificate
+server.ssl.key-store=classpath:keystore/baeldung.p12
+# The password used to generate the certificate
+server.ssl.key-store-password=maisagua2023
+# The alias mapped to the certificate
+server.ssl.key-alias=baeldung
+server.ssl.enabled=true
+#trust store location
+trust.store=classpath:keystore/baeldung.p12
+#trust store password
+trust.store.password=maisagua2023
+server.port=8080
+security.require-ssl=true

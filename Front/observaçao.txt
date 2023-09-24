@@ -1,0 +1,7 @@
+muito provavelmente sera necessario mudar a url no arquivo functionSite.js
+
+ja que os containers estao em rede provavelmente tem que seguir a mesma regra do nome dos serviço
+var URL_BASE = "https://backend:5000/"
+"backend" e o nome do serviço definido no docker compose e a porta 5000 e referente a 8080 dentro do container
+
+caso precisar mude a url
